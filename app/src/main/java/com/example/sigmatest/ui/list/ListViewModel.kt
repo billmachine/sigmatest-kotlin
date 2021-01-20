@@ -1,16 +1,14 @@
 package com.example.sigmatest.ui.list
 
-import android.util.Log
 import androidx.lifecycle.*
 import com.example.sigmatest.data.entity.PostEntity
-import com.example.sigmatest.data.entity.PostResponse
-import com.example.sigmatest.repository.postRepository
+import com.example.sigmatest.repository.PostRepository
 import kotlinx.coroutines.*
 
 import javax.inject.Inject
 
 class ListViewModel @Inject constructor(
-    val postRepository: postRepository
+    val PostRepository: PostRepository
 ):ViewModel ()
 {
 
@@ -26,7 +24,7 @@ class ListViewModel @Inject constructor(
 
          viewModelScope.async  {
             try {
-                val posts = postRepository.fetchRemotePosts()
+                val posts = PostRepository.fetchRemotePosts()
                 val postEntities  = ArrayList<PostEntity>()
                 posts?.map {
                         post ->
@@ -44,28 +42,28 @@ class ListViewModel @Inject constructor(
 
      fun getLocalPosts(){
          viewModelScope.launch {
-             postRepository.fetchLocalPosts().observeForever {
+             PostRepository.fetchLocalPosts().observeForever {
                  _postList.postValue(it)
              }
-             postRepository.fetchLocalPosts().removeObserver {}
+             PostRepository.fetchLocalPosts().removeObserver {}
          }
     }
 
     fun searchPosts(it:String) {
         viewModelScope.launch {
-            postRepository.searchPosts(it).observeForever {
+            PostRepository.searchPosts(it).observeForever {
                 _postList.postValue(it)
             }
-            postRepository.searchPosts(it).removeObserver {}
+            PostRepository.searchPosts(it).removeObserver {}
         }
     }
 
     private fun deleteLocalPosts(){
-        postRepository.deleteLocalPosts()
+        PostRepository.deleteLocalPosts()
     }
 
     private fun insertLocalPosts(posts:List<PostEntity>){
-        postRepository.insertLocalPosts(posts)
+        PostRepository.insertLocalPosts(posts)
     }
 
 }

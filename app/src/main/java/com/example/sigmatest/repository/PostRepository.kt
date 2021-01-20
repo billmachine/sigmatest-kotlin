@@ -12,7 +12,7 @@ import javax.inject.Inject
 import javax.inject.Singleton
 
 @Singleton
-class postRepository @Inject constructor(
+class PostRepository @Inject constructor(
    val db: AppDatabase,
     val post: RestApi
 )  {
