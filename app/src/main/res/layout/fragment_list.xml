@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.list.ListFragment">
+
+    <EditText
+        android:id="@+id/et_search"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:hint="Search"
+        app:layout_constraintEnd_toStartOf="@+id/bt_search"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"></EditText>
+
+    <androidx.recyclerview.widget.RecyclerView
+        app:layout_constraintTop_toBottomOf="@+id/et_search"
+        android:id="@+id/rv_posts"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+
+        app:layout_constraintStart_toStartOf="parent"
+        tools:listitem="@layout/item_post" />
+
+    <Button
+        android:id="@+id/bt_search"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Search"
+        android:textAllCaps="false"
+        android:layout_marginRight="2dp"
+        app:layout_constraintEnd_toStartOf="@+id/bt_clear"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/bt_clear"
+        android:textAllCaps="false"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Clear"
+        android:layout_marginRight="10dp"
+        android:backgroundTint="@color/material_grey200"
+        android:textColor="@color/material_grey500"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

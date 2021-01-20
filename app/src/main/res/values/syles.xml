@@ -1,0 +1,26 @@
+
+<resources>
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+<!--    <style name="AppThemeLight" parent="Theme.AppCompat.Light.NoActionBar">-->
+<!--        &lt;!&ndash; Customize your theme here. &ndash;&gt;-->
+<!--        &lt;!&ndash;<item name="buttonStyle">@style/buttonku</item>&ndash;&gt;-->
+<!--        <item name="colorPrimary">@color/colorPrimary</item>-->
+<!--        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>-->
+<!--        <item name="colorAccent">@color/colorAccent</item>-->
+<!--        <item name="android:navigationBarColor">@color/colorPrimaryDark</item>-->
+
+<!--        <item name="monthBgSelectedColor">@color/material_black</item>-->
+        <!--        <item name="android:windowTranslucentNavigation">true</item>-->
+
+        <!--<item name="monthFontColorSelected">@color/colorPrimary</item>-->
+        <!--        <item name="android:windowAnimationStyle">@style/AppTheme.WindowTransition</item>-->
+
+        <!--        <item name="android:textCursorDrawable">@color/colorPrimary</item>-->
+<!--    </style>-->
+</resources>
